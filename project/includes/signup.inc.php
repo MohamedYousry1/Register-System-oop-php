@@ -22,4 +22,7 @@ if (isset($_POST["submit"])) {
     // Going back to signup page with success message
     header('location: ../login.php');
     exit();
+} elseif (basename($_SERVER['PHP_SELF']) == 'signup.inc.php') {
+    http_response_code(404);
+    exit;
 }
