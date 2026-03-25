@@ -20,4 +20,7 @@ if (isset($_POST["submit"])) {
     // Going to profile page with success message
     header('location: ../profile.php');
     exit();
+} elseif (basename($_SERVER['PHP_SELF']) == 'login.inc.php') {
+    http_response_code(404);
+    exit;
 }
