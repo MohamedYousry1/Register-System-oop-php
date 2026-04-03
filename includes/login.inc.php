@@ -17,7 +17,6 @@ if (isset($_POST["submit"])) {
 
     // Running errors handlers and user signup
     $loginCtrl->loginUser();
-    // Going to profile page with success message
     header('location: ../profile.php');
     exit();
 } elseif (basename($_SERVER['PHP_SELF']) == 'login.inc.php') {

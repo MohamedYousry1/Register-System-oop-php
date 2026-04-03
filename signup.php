@@ -38,11 +38,6 @@
                 echo "<div class=' error-message'>{$_SESSION['error']}</div>";
                 unset($_SESSION['error']);
             }
-            // Display success message
-            if (isset($_SESSION['success'])) {
-                echo "<div class='success-message'>{$_SESSION['success']}</div>";
-                unset($_SESSION['success']);
-            }
             ?>
             <form action="includes/signup.inc.php" method="POST">
                 <div class="mb-4">
