@@ -2,9 +2,9 @@
 
 class DBConn
 {
-    private $dsn = "mysql:host=localhost;dbname=auth_system;charset=utf8mb4";
-    private $username = 'root';
-    private $password = '';
+    private $dsn = "mysql:host=sql301.infinityfree.com;dbname=if0_41567081_login_system;charset=utf8mb4";
+    private $username = 'if0_41567081';
+    private $password = 'Bondok2779';
     private $conn;
 
     protected function connect()
