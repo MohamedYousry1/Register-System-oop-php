@@ -2,10 +2,17 @@
 
 class DBConn
 {
-    private $dsn = "mysql:host=sql301.infinityfree.com;dbname=if0_41567081_login_system;charset=utf8mb4";
-    private $username = 'if0_41567081';
-    private $password = 'Bondok2779';
+    private $dsn;
+    private $username;
+    private $password;
     private $conn;
+
+    public function __construct()
+    {
+        $this->dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8mb4";
+        $this->username = $_ENV['DB_USER'];
+        $this->password = $_ENV['DB_PASS'];
+    }
 
     protected function connect()
     {
