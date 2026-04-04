@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once __DIR__ . '/../vendor/autoload.php';
+use App\LoginControler;
 
 if (isset($_POST["submit"])) {
 
@@ -9,9 +11,9 @@ if (isset($_POST["submit"])) {
     $password = $_POST["password"];
 
     // Instantiate SignupContr Class
-    include '../classes/dbconn.php';
-    include '../classes/login.classes.php';
-    include '../classes/login-contr.classes.php';
+    // include '../classes/dbconn.php';
+    // include '../classes/login.classes.php';
+    // include '../classes/login-contr.classes.php';
     $loginCtrl = new LoginControler($username, $password);
 
 

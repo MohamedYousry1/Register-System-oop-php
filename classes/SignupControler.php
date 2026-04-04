@@ -1,6 +1,7 @@
 <?php
+namespace App;
 // this class is used to control the signup process (validation and error handling)
-class SignupControler extends Signup
+class SignupControler extends SignupClass
 {
     private $username;
     private $email;

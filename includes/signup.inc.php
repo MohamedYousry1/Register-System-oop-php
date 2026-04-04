@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once __DIR__ . '/../vendor/autoload.php';
+use App\SignupControler;
 
 if (isset($_POST["submit"])) {
 
@@ -11,9 +13,9 @@ if (isset($_POST["submit"])) {
     $repeat_password = $_POST["repeat_password"];
 
     // Instantiate SignupContr Class
-    include '../classes/dbconn.php';
-    include '../classes/signup.classes.php';
-    include '../classes/signup-contr.classes.php';
+    // include '../classes/dbconn.php';
+    // include '../classes/signup.classes.php';
+    // include '../classes/signup-contr.classes.php';
     $signupCtrl = new SignupControler($username, $email, $password, $repeat_password);
 
 

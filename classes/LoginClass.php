@@ -1,6 +1,8 @@
 <?php
+namespace App;
+use PDO;
 // process the login data
-class Login extends DBconn
+class LoginClass extends DBConn
 {
     protected $validation_pattern = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
     protected function getUser($username_or_email, $password)
@@ -33,8 +35,6 @@ class Login extends DBconn
             exit();
         }
 
-        
-        session_start();
         $_SESSION['userid'] = $user['id'];
         $_SESSION['username'] = $user['user_name'];
     }

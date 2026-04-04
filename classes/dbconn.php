@@ -1,19 +1,16 @@
 <?php
 
+namespace App;
+// >> use PDO, use PDOException bec, we use namespaces, to read pdo class, pdoexception class
+use PDO;
+use PDOException;
+
 class DBConn
 {
-    private $dsn;
-    private $username;
-    private $password;
+    private $dsn = "mysql:host=localhost;dbname=auth_system;charset=utf8mb4";
+    private $username = 'root';
+    private $password = '';
     private $conn;
-
-    public function __construct()
-    {
-        $this->dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8mb4";
-        $this->username = $_ENV['DB_USER'];
-        $this->password = $_ENV['DB_PASS'];
-    }
-
     protected function connect()
     {
         try {
@@ -21,8 +18,8 @@ class DBConn
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->conn;
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage() . "<br>";
-            die();
+
+            throw $e;
         }
     }
 }

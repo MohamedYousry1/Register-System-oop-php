@@ -1,6 +1,7 @@
 <?php
+namespace App;
 // process the signup data
-class Signup extends DBconn
+class SignupClass extends DBConn
 {
 
     protected function setUser($username, $email, $password){   
